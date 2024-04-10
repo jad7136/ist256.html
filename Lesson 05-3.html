@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        #input {
+            width: 300px;
+        }
+        .btn-primary {
+            margin-top: 10px;
+            margin-bottom: 20px; 
+        }
+        #dataTable {
+            margin-top: 10px;
+        }
+        .blue-text-background {
+            display: inline-block;
+            background-color: rgb(10, 200, 248);
+        }
+    </style>
+</head>
+<body>
+    <div id="input">
+        <label for="countryCodeInput" class="form-label">Country Code</label>
+        <input type="text" name="countryCodeInput" id="countryCodeInput" placeholder="US" class="form-control">
+        <label for="capitalInput" class="form-label">Capital</label>
+        <input type="text" name="capitalInput" id="capitalInput" placeholder="Washington D.C." class="form-control">
+        <button type="button" class="btn btn-primary" onclick="addToTable()">Submit</button>
+    </div>
+    <p class="blue-text-background"><b>Country Code and its Capital</b></p>
+
+    <!-- This is the table to display data -->
+    <table id="dataTable" class="table">
+        <thead>
+            <tr>
+                <th>Country Code</th>
+                <th>Capital</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        function addToTable() {
+            var countryCode = document.getElementById('countryCodeInput').value;
+            var capital = document.getElementById('capitalInput').value;
+            var newRow = document.createElement('tr');
+            var countryCodeCell = document.createElement('td');// creates the cells
+            var capitalCell = document.createElement('td');
+            countryCodeCell.textContent = countryCode;//sets the cells contents
+            capitalCell.textContent = capital;
+            newRow.appendChild(countryCodeCell);
+            newRow.appendChild(capitalCell);
+            document.getElementById('tableBody').appendChild(newRow);// this Appends row to the table body
+            document.getElementById('countryCodeInput').value = '';//sets this to be clear
+            document.getElementById('capitalInput').value = '';
+        }
+    </script>
+</body>
+</html>
