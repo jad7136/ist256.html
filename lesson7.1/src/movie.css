@@ -1,11 +1,11 @@
-
 .Movie{
     margin: 15px;
-    background-color: grey;
+    background-color: rgb(182, 182, 182);
     padding: 20px;
     border: 2px solid black;
     border-radius: 5px;
 }
+/* This changes the color and the font size is above */
 h4{
-    color: orange;
+    color: rgb(194, 128, 5);
 }

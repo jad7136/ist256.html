@@ -13,7 +13,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://{jad7136}.github.io/lesson7.1",
+  "homepage": "http://jad7136.github.io/lesson7.1",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
